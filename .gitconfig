@@ -1,0 +1,11 @@
+[user]
+	email = 51206659+meanwhile131@users.noreply.github.com
+	name = meanwhile131
+[alias]
+	ncommit = commit -a --allow-empty-message -m \"\"
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
