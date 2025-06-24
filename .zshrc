@@ -11,10 +11,6 @@ bindkey "^[[3~" delete-char
 source ~/.zsh-history-substring-search.zsh
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
-if uwsm check may-start; then
-    exec uwsm start hyprland.desktop
-fi
-
 PATH="/home/sasha/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/sasha/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/sasha/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
