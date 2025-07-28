@@ -81,7 +81,8 @@
     "temperature": {
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C"
+        "format": "{temperatureC}°C",
+	"thermal-zone": 2
     },
     "power-profiles-daemon": {
         "format": "{icon}",
