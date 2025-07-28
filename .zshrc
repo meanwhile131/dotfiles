@@ -18,4 +18,5 @@ PERL_MB_OPT="--install_base \"/home/sasha/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/sasha/perl5"; export PERL_MM_OPT;
 autoload -Uz compinit
 compinit
-alias dotfiles='git --git-dir=$HOME/.git --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
