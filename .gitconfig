@@ -1,6 +1,6 @@
 [user]
-	email = 51206659+meanwhile131@users.noreply.github.com
-	name = meanwhile131
+	email = sashachernyakov111111@gmail.com
+	name = Sasha Chernyakov
 [alias]
 	ncommit = commit -a --allow-empty-message -m \"\"
 [push]
@@ -15,3 +15,31 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[protocol "file"]
+	allow = always
+[core]
+	editor = nvim
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[trailer "changeid"]
+	key = Change-Id
+[color]
+	ui = auto
+[sendemail]
+    smtpServer = smtp.gmail.com
+    smtpServerPort = 587
+    smtpEncryption = tls
+    smtpUser = sashachernyakov111111@gmail.com
+[credential]
+    helper = store
