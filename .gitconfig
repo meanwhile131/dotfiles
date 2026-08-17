@@ -19,12 +19,13 @@
 	allow = always
 [core]
 	editor = nvim
+	autocrlf = input
 [pull]
 	rebase = true
 [rerere]
 	enabled = true
 [diff]
-    tool = vscode
+	tool = nvimdiff
 [difftool "vscode"]
     cmd = code --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
@@ -43,3 +44,5 @@
     smtpUser = sashachernyakov111111@gmail.com
 [credential]
     helper = store
+[difftool]
+	prompt = false
