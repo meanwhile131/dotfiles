@@ -18,12 +18,15 @@ hl.monitor({
     scale    = 1,
 })
 
-
+hl.curve("easeSine", { type = "bezier", points = { {0.37, 0}, {0.63, 1} } });
+hl.animation({ leaf = "windows", enabled = true, speed = 2, bezier = "easeSine" });
+hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "easeSine" });
 
 
 hl.env("XCURSOR_SIZE", 24)
 
 hl.env("HYPRCURSOR_SIZE", 24)
+hl.env("GTK_THEME", "Adwaita:dark")
 
 hl.config({
     general = {
@@ -90,7 +93,7 @@ hl.config({
 hl.config({
     input = {
         kb_layout = "us, ru",
-        kb_options = "caps:none, grp:win_space_toggle",
+        kb_options = "caps:none, grp:win_space_toggle, compose:caps",
         follow_mouse = 1,
         sensitivity = 0,
         accel_profile = "flat",
@@ -102,7 +105,7 @@ hl.config({
 
 hl.device({
     name = "razer-razer-deathadder-essential",
-    sensitivity = -0.85,
+    sensitivity = -0.9,
 })
 
 hl.device({
@@ -121,7 +124,7 @@ hl.bind(mainMod .. " + " .. "Q", hl.dsp.exec_cmd("kitty"))
 
 hl.bind(mainMod .. " + " .. "C", hl.dsp.window.close())
 
-hl.bind(mainMod .. " + " .. "M", hl.dsp.exec_cmd("uwsm stop"))
+hl.bind(mainMod .. " + " .. "M", hl.dsp.exec_cmd("hyprshutdown"))
 
 hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("thunar"))
 
@@ -203,9 +206,13 @@ hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO
 
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"))
 
+--hl.bind("F8", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"))
+
+--hl.bind("F7", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"))
+
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 200%+"))
 
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 200%-"), { repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 200%-"), { release = true })
 
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 
@@ -229,7 +236,11 @@ hl.window_rule({
 
 -- Autostart
 hl.on("hyprland.start", function()
+    hl.exec_cmd("systemctl --user start hyprland-session.target")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("hyprctl setcursor Breeze 24")
-    hl.exec_cmd("waybar & hyprpaper & Telegram -startintray & steam -silent & wl-paste --watch cliphist store & qbittorrent")
+    hl.exec_cmd("hyprpaper & Telegram -startintray & steam -silent & wl-paste --watch cliphist store")
+end)
+
+hl.on("hyprland.shutdown", function()
+    os.execute("systemctl --user stop hyprland-session.target && sleep 0.1")
 end)

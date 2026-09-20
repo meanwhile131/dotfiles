@@ -1,5 +1,5 @@
 [user]
-	email = sashachernyakov111111@gmail.com
+	email = sascherny@gmail.com
 	name = Sasha Chernyakov
 [alias]
 	ncommit = commit -a --allow-empty-message -m \"\"
@@ -42,7 +42,12 @@
     smtpServerPort = 587
     smtpEncryption = tls
     smtpUser = sashachernyakov111111@gmail.com
+	confirm = auto
 [credential]
     helper = store
 [difftool]
 	prompt = false
+[pager]
+	diff = false
+[review "review.lineageos.org"]
+	username = meanwhile131

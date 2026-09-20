@@ -9,7 +9,7 @@ bindkey "^[[3~" delete-char
 
 autoload -Uz compinit
 compinit
-alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotf='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias sudo='doas'
 export EDITOR="nvim"
 
@@ -46,3 +46,15 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$HOME/.dotnet/tools"
 alias getidf=". ~/.espressif/esp-idf/export.sh"
 alias cm="podman run -it --rm --userns=keep-id -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v ~/.plastic4:/home/ubuntu/.plastic4 -v .:/home/ubuntu/wkspaces -v ~/.ssh:/home/ubuntu/.ssh plasticscm /usr/bin/cm"
+bindkey '^[^?' backward-kill-word
+export PATH=$PATH:$(go env GOPATH)/bin
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/var/lib/flatpak/exports/bin:~/.local/share/flatpak/exports/bin"
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+export PATH="$PATH:$HOME/.local/share/pnpm/bin"
+clear() {
+    printf "\e[H\e[3J"
+}
