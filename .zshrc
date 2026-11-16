@@ -10,7 +10,6 @@ bindkey "^[[3~" delete-char
 autoload -Uz compinit
 compinit
 alias dotf='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias sudo='doas'
 export EDITOR="nvim"
 
 export VCPKG_ROOT="$HOME/.local/share/vcpkg"
@@ -19,7 +18,6 @@ export PATH=$PATH:~/.cargo/bin/:$VCPKG_ROOT
 # automated stuff
 export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 if [ -e /home/sasha/.nix-profile/etc/profile.d/nix.sh ]; then . /home/sasha/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-. "/home/sasha/.deno/env"
 PATH="/home/sasha/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/sasha/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/sasha/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
@@ -52,7 +50,6 @@ export PATH="$PATH:/var/lib/flatpak/exports/bin:~/.local/share/flatpak/exports/b
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
 export PATH="$PATH:$HOME/.local/share/pnpm/bin"
 clear() {
     printf "\e[H\e[3J"
