@@ -102,15 +102,12 @@ hl.config({
         kb_layout = "us, ru",
         kb_options = "grp:win_space_toggle",
         follow_mouse = 1,
+	accel_profile = "flat",
+	sensitivity = -0.9,
 	touchpad = {
 		natural_scroll = true
 	}
     },
-})
-
-hl.device({
-    name = "usb-optical-mouse-",
-    sensitivity = -0.8,
 })
 
 hl.device({
