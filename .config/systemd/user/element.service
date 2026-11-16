@@ -1,0 +1,8 @@
+[Service]
+ExecStartPre=sleep 5
+ExecStart=element-desktop --hidden
+After=waybar.service
+Requires=waybar.service
+
+[Install]
+WantedBy=hyprland-session.target
