@@ -16,6 +16,12 @@ hl.monitor({
     position = "auto-left",
 })
 
+hl.monitor({
+    output   = "eDP-1",
+    mode     = "highres",
+    scale = 1
+})
+
 hl.curve("easeSine", { type = "bezier", points = { {0.37, 0}, {0.63, 1} } });
 hl.animation({ leaf = "windows", enabled = true, speed = 2, bezier = "easeSine" });
 hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "easeSine" });
