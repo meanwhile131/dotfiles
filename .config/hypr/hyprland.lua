@@ -8,14 +8,12 @@ hl.monitor({
     output   = "DP-1",
     mode     = "highrr",
     position = "auto-right",
-    scale    = 1,
 })
 
 hl.monitor({
-    output   = "HDMI-A-1",
-    mode     = "highres",
+    output   = "DP-2",
+    mode     = "highrr",
     position = "auto-left",
-    scale    = 1,
 })
 
 hl.curve("easeSine", { type = "bezier", points = { {0.37, 0}, {0.63, 1} } });
@@ -64,6 +62,12 @@ hl.config({
 })
 
 hl.config({
+	render = {
+		cm_auto_hdr = true
+	}
+})
+
+hl.config({
     animations = {
         enabled = true,
     },
@@ -93,19 +97,14 @@ hl.config({
 hl.config({
     input = {
         kb_layout = "us, ru",
-        kb_options = "caps:none, grp:win_space_toggle, compose:caps",
+        kb_options = "grp:win_space_toggle",
         follow_mouse = 1,
-        sensitivity = 0,
         accel_profile = "flat",
+	sensitivity = -0.9,
         touchpad = {
             natural_scroll = false,
         },
     },
-})
-
-hl.device({
-    name = "razer-razer-deathadder-essential",
-    sensitivity = -0.9,
 })
 
 hl.device({
@@ -217,21 +216,20 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 
 hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen())
-
-hl.window_rule({
-    name  = "fullscreen_on",
-    match = {
-        class = "Terraria.bin.x86_64",
-    },
-    fullscreen = true,
-})
-
 hl.window_rule({
     name  = "float_on",
     match = {
         class = "firefox",
         title = true,
     },
+})
+
+hl.window_rule({
+	name = "terraria_fullscreen",
+	match = {
+		class = "Terraria.bin.x86_64"
+	},
+	sync_fullscreen = false
 })
 
 -- Autostart

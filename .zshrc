@@ -14,7 +14,7 @@ alias sudo='doas'
 export EDITOR="nvim"
 
 export VCPKG_ROOT="$HOME/.local/share/vcpkg"
-export PATH=$PATH:~/.cargo/bin/:~/platform-tools:$VCPKG_ROOT
+export PATH=$PATH:~/.cargo/bin/:$VCPKG_ROOT
 
 # automated stuff
 export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
@@ -48,7 +48,6 @@ alias getidf=". ~/.espressif/esp-idf/export.sh"
 alias cm="podman run -it --rm --userns=keep-id -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v ~/.plastic4:/home/ubuntu/.plastic4 -v .:/home/ubuntu/wkspaces -v ~/.ssh:/home/ubuntu/.ssh plasticscm /usr/bin/cm"
 bindkey '^[^?' backward-kill-word
 export PATH=$PATH:$(go env GOPATH)/bin
-export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/var/lib/flatpak/exports/bin:~/.local/share/flatpak/exports/bin"
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 export PYENV_ROOT="$HOME/.pyenv"
@@ -58,3 +57,16 @@ export PATH="$PATH:$HOME/.local/share/pnpm/bin"
 clear() {
     printf "\e[H\e[3J"
 }
+bindkey '^R' history-incremental-search-backward
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey '^[^?' backward-kill-word
+bindkey '^[^H' backward-kill-word
+
+# opencode
+export PATH=/home/sasha/.opencode/bin:$PATH
+alias dsh="pnpm dlx @deepseek-ai/dsh"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/sasha/.local/bin:$PATH"
