@@ -21,9 +21,6 @@ hl.animation({ leaf = "windows", enabled = true, speed = 2, bezier = "easeSine" 
 hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "easeSine" });
 
 
-hl.env("XCURSOR_SIZE", 24)
-
-hl.env("HYPRCURSOR_SIZE", 24)
 hl.env("GTK_THEME", "Adwaita:dark")
 
 hl.config({
@@ -99,8 +96,6 @@ hl.config({
         kb_layout = "us, ru",
         kb_options = "grp:win_space_toggle",
         follow_mouse = 1,
-        accel_profile = "flat",
-	sensitivity = -0.9,
         touchpad = {
             natural_scroll = false,
         },
