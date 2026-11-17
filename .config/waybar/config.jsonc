@@ -16,7 +16,6 @@
         "sway/window"
     ],
     "modules-right": [
-        "mpd",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -27,7 +26,6 @@
         "backlight",
         "sway/language",
         "battery",
-        "battery#bat2",
         "clock",
         "tray"
     ],
