@@ -115,6 +115,11 @@ hl.device({
     sensitivity = -0.2,
 })
 
+hl.device({
+    name = "syna7db5:00-06cb:cd41-touchpad",
+    sensitivity = 1,
+})
+
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + " .. "Q", hl.dsp.exec_cmd("kitty"))

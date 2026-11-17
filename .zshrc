@@ -9,7 +9,6 @@ bindkey "^[[3~" delete-char
 
 autoload -Uz compinit
 compinit
-alias dotf='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 export EDITOR="nvim"
 
 export VCPKG_ROOT="$HOME/.local/share/vcpkg"
