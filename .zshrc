@@ -66,3 +66,4 @@ alias dsh="pnpm dlx @deepseek-ai/dsh"
 
 # Added by Antigravity CLI installer
 export PATH="/home/sasha/.local/bin:$PATH"
+export SSH_AUTH_SOCK="$(ssh-tpm-agent --print-socket)"
