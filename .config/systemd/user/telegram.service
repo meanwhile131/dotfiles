@@ -1,0 +1,8 @@
+[Unit]
+After=waybar.service
+
+[Service]
+ExecStart=Telegram -startintray
+
+[Install]
+WantedBy=hyprland-session.target
