@@ -7,6 +7,7 @@ Requisite=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/waybar
+ExecStartPost=wait-tray
 ExecReload=kill -SIGUSR2 $MAINPID
 Restart=on-failure
 
