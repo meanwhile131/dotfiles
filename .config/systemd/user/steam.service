@@ -1,0 +1,8 @@
+[Unit]
+After=waybar.service
+
+[Service]
+ExecStart=steam -silent
+
+[Install]
+WantedBy=hyprland-session.target

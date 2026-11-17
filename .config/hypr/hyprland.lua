@@ -239,7 +239,7 @@ hl.window_rule({
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprland-session.target")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("hyprpaper & Telegram -startintray & steam -silent & wl-paste --watch cliphist store")
+    hl.exec_cmd("hyprpaper & Telegram -startintray & wl-paste --watch cliphist store")
 end)
 
 hl.on("hyprland.shutdown", function()
